@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/signUp.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main class="main">
+      <form action="/sign-up" method="post" class="sign-up-form">
+        <label for="fullname">Full name</label>
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          minlength="5"
+          value="<%= fullname ? fullname : '' %>" />
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          minlength="5"
+          value="<%= username ? username : '' %>" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword`" />
+        <button>Sign up</button>
+      </form>
+    </main>
+  </body>
+</html>

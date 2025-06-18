@@ -1,0 +1,43 @@
+.main {
+  padding-top: 10%;
+}
+
+.sign-up-form {
+  border: 4px solid black;
+  border-radius: 12px;
+  margin: auto;
+  width: 24rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.sign-up-form label {
+  padding-left: 2px;
+  align-self: flex-start;
+}
+
+.sign-up-form input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid black;
+}
+
+.sign-up-form button {
+  margin-top: 12px;
+  background-color: hsl(27 100% 78.3%);
+  font-size: 1.25rem;
+  color: hsl(27 50% 15%);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 12px;
+}
+
+.sign-up-form button:hover {
+  background-color: hsl(27 100% 88.3%);
+  color: hsl(27 50% 25%);
+}

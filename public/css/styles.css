@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+html {
+  background-color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(194 65% 96.1%);
+  color: black;
+  font-weight: bold;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  /* width: 75%; */
+  margin: auto;
+}
+
+.header {
+  background-color: hsl(27 100% 78.3%);
+  font-size: 2rem;
+  padding: 12px;
+  text-align: center;
+}
