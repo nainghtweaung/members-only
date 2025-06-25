@@ -1,0 +1,23 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(194 65% 96.1%);
+  padding-top: 128px;
+}
+
+.join-dialog {
+  background-color: hsl(194 75% 93.5%);
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 24px;
+  height: max-content;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.join-dialog h3 {
+  margin-bottom: 12px;
+  text-align: center;
+}

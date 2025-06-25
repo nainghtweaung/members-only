@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/log-in.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs')%>
+    <main class="main">
+      <form action="/log-in" method="post" class="log-in-form">
+        <label for="username">Username</label>
+        <input
+          required
+          type="text"
+          name="username"
+          id="username"
+          oninvalid="this.setCustomValidity('Enter User Name Here')"
+          oninput="setCustomValidity('')" />
+        <label for="password">Password</label>
+        <input
+          required
+          type="password"
+          name="password"
+          id="password"
+          oninvalid="this.setCustomValidity('Enter A Password')"
+          oninput="setCustomValidity('')" />
+        <button>Log In</button>
+      </form>
+    </main>
+    <% if (locals.error) { %>
+    <div class="error-message">
+      <p><%= error %></p>
+    </div>
+    <% } %>
+  </body>
+</html>

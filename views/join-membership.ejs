@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/join-membership.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <div class="wrapper">
+      <form class="join-dialog" method="post" action="/sign-up/join">
+        <h3>Join Now!</h3>
+        <label for="join">Enter password</label>
+        <input type="password" name="joinPassword" />
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
