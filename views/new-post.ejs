@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/new-post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <title>New Post</title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <form class="wrapper" action="/new-post" method="post">
+      <div>
+        <label for="title">Title</label>
+        <input autofocus required type="text" name="title" id="title" />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea autofocus required name="message" id="message"></textarea>
+      </div>
+      <button type="submit">Post</button>
+    </form>
+  </body>
+</html>

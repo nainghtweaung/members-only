@@ -19,8 +19,25 @@ async function addUser(fullname, username, password) {
   );
 }
 
+async function addNewMessage(title, text, userid) {
+  const date = new Date();
+  await pool.query(
+    'INSERT INTO messages(title, text,date, userid) VALUES ($1, $2, $3, $4)',
+    [title, text, date, userid]
+  );
+}
+
+async function getUsersMessages() {
+  const { rows } = await pool.query(
+    'SELECT * FROM users JOIN messages ON users.id = messages.userid'
+  );
+  return rows;
+}
+
 module.exports = {
   getUserByUsername,
   getUsers,
   addUser,
+  addNewMessage,
+  getUsersMessages,
 };

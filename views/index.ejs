@@ -4,15 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
     <title>Members Only</title>
   </head>
   <body>
     <%- include('partials/header.ejs',user) %>
-    <!-- <% if (locals.user) { %>
-    <p><%= user.id %></p>
-    <p><%= user.fullname %></p>
-    <p><%= user.username %></p>
-    <p><%= user.member %></p>
-    <% } %> -->
+    <main class="wrapper">
+      <div class="messages">
+        <% if (locals.messages) { %> <% messages.forEach(message=> { %>
+        <div class="message">
+          <p class="message-user">
+            <%= user ? message.username : '*****' %>
+            <span class="date"><%=user ? message.displayDate : '*****' %></span>
+          </p>
+          <p class="message-text"><%= message.text %></p>
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </main>
   </body>
 </html>

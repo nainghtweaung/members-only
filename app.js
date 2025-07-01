@@ -7,6 +7,7 @@ require('./config/passport');
 const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/sign-up');
 const logInRouter = require('./routes/log-in');
+const newPostRouter = require('./routes/new-post');
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.get('/log-out', function (req, res, next) {
     res.redirect('/');
   });
 });
+app.use('/new-post', newPostRouter);
 
 app.listen(5000, () => {
   console.log('listening on port 5000');
