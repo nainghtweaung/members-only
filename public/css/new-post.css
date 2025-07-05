@@ -11,6 +11,7 @@
   border-radius: 12px;
   justify-content: start;
   padding: 32px;
+  background-color: hsl(240 50% 90%);
 }
 
 .wrapper div {
@@ -30,6 +31,7 @@
   height: 128px;
   padding: 8px;
   border-radius: 8px;
+  resize: none;
 }
 
 /* #title:focus,

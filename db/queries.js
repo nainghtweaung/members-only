@@ -34,10 +34,15 @@ async function getUsersMessages() {
   return rows;
 }
 
+async function deleteMessage(id) {
+  await pool.query('DELETE FROM messages WHERE id = $1', [id]);
+}
+
 module.exports = {
   getUserByUsername,
   getUsers,
   addUser,
   addNewMessage,
   getUsersMessages,
+  deleteMessage,
 };

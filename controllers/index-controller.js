@@ -15,4 +15,15 @@ module.exports = {
     console.log(user, messages);
     res.render('index', { user, messages: messages.reverse() });
   },
+  deleteMessage: async (req, res) => {
+    const { id } = req.params;
+    const user = req.user ? req.user : null;
+
+    if (user && user.admin === true) {
+      db.deleteMessage(id);
+      res.redirect('/');
+    } else {
+      res.status(403).send('Forbidden');
+    }
+  },
 };

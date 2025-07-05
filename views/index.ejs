@@ -20,9 +20,12 @@
         <div class="message">
           <p class="message-user">
             <%= user ? message.username : '*****' %>
-            <span class="date"><%=user ? message.displayDate : '*****' %></span>
+            <span class="date"><%=user ? message.displayDate : '' %></span>
           </p>
           <p class="message-text"><%= message.text %></p>
+          <% if (locals.user && locals.user.admin === true) { %>
+          <a href="/delete/<%= message.id  %>" class="message-delete">DELETE</a>
+          <% } %>
         </div>
         <% }) %> <% } %>
       </div>
