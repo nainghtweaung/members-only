@@ -13,15 +13,16 @@ passport.use(
       );
       const user = rows[0];
 
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username' });
+      }
+
       const { rows: hash } = await pool.query(
         'SELECT password FROM users WHERE username = $1',
         [username]
       );
       const isMatch = await bcrypt.compare(password, hash[0].password);
 
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username' });
-      }
       if (!isMatch) {
         return done(null, false, { message: 'Incorrect password' });
       }

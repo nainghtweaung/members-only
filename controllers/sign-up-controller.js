@@ -31,9 +31,9 @@ module.exports = {
       } else {
         const hashedPassword = await bcrypt.hash(password, salt);
         await db.addUser(fullname, username, hashedPassword);
-        const users = await db.getUsers();
-        console.log(users);
-        res.sendStatus(200);
+        // const users = await db.getUsers();
+        // console.log(users);
+        res.status(200).redirect('/');
       }
     } catch (error) {
       console.log(error);

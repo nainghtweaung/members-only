@@ -1,5 +1,7 @@
 .main {
   padding-top: 64px;
+  display: flex;
+  flex-direction: column;
 }
 
 .log-in-form {
@@ -9,11 +11,13 @@
   margin: auto;
   width: 24rem;
   padding: 24px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  position: relative;
 }
 
 .log-in-form label {
@@ -29,14 +33,15 @@
 }
 
 .log-in-form button {
-  margin-top: 12px;
+  /* margin-top: 12px; */
   background-color: hsl(240 60% 40%);
   font-size: 1.25rem;
   color: white;
   padding: 8px 12px;
   border: none;
   border-radius: 12px;
-  margin-bottom: -40px;
+  margin-bottom: -30px;
+  transform: translateY(50%);
   box-shadow: 0px 2px 4px black;
 }
 
@@ -47,13 +52,10 @@
 }
 
 .error-message {
-  opacity: 0.8;
-  color: black;
-  font-size: 1.2rem;
-  margin: auto;
-  margin-top: 64px;
-  padding: 24px;
-  border: 2px solid red;
-  border-radius: 4px;
-  background-color: hsl(27 50% 88.3%);
+  position: absolute;
+  bottom: 30px;
+  left: 36px;
+  color: red;
+  font-weight: 400;
+  font-size: 0.75rem;
 }

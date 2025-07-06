@@ -34,12 +34,10 @@
           oninvalid="this.setCustomValidity('Enter A Password')"
           oninput="setCustomValidity('')" />
         <button>Log In</button>
+        <% if (locals.message) { %>
+        <span class="error-message">* <%= message %></span>
+        <% }%>
       </form>
     </main>
-    <% if (locals.error) { %>
-    <div class="error-message">
-      <p><%= error %></p>
-    </div>
-    <% } %>
   </body>
 </html>
