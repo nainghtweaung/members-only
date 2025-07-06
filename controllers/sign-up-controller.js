@@ -12,6 +12,7 @@ module.exports = {
       username: null,
       password: null,
       confirmPassword: null,
+      errors: null,
     });
   },
   signUpPost: async (req, res) => {
@@ -21,7 +22,12 @@ module.exports = {
 
       if (!errors.isEmpty()) {
         console.log(errors.mapped());
-        res.render('sign-up', { title: 'Sign up', fullname, username });
+        res.render('sign-up', {
+          title: 'Sign up',
+          fullname,
+          username,
+          errors: errors.mapped(),
+        });
       } else {
         const hashedPassword = await bcrypt.hash(password, salt);
         await db.addUser(fullname, username, hashedPassword);

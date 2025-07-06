@@ -12,7 +12,6 @@ module.exports = {
     messages.map((message) => {
       message.displayDate = moment(message.date).fromNow();
     });
-    console.log(user, messages);
     res.render('index', { user, messages: messages.reverse() });
   },
   deleteMessage: async (req, res) => {

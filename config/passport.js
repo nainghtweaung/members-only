@@ -1,4 +1,5 @@
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require('../db/pool');
@@ -12,10 +13,16 @@ passport.use(
       );
       const user = rows[0];
 
+      const { rows: hash } = await pool.query(
+        'SELECT password FROM users WHERE username = $1',
+        [username]
+      );
+      const isMatch = await bcrypt.compare(password, hash[0].password);
+
       if (!user) {
         return done(null, false, { message: 'Incorrect username' });
       }
-      if (user.password !== password) {
+      if (!isMatch) {
         return done(null, false, { message: 'Incorrect password' });
       }
       return done(null, user);

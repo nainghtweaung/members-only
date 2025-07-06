@@ -1,6 +1,8 @@
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = new Pool({
-  connectionString:
-    'postgresql://naing_htwe_aung:naing_htwe_aung@localhost:5432/members_only',
+  connectionString: process.env.DATABASE_URL,
 });
