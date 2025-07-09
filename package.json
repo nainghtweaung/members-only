@@ -1,4 +1,12 @@
 {
+  "name": "members-only-app",
+  "version": "1.0.0",
+  "description": "A simple members-only web application built with Node.js, Express, and PostgreSQL.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "populate-db": "node db/populate-db.js"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "dotenv": "^17.0.1",
