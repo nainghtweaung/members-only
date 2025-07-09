@@ -1,4 +1,6 @@
 const { Client } = require('pg');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS users (
@@ -6,14 +8,14 @@ CREATE TABLE IF NOT EXISTS users (
   fullname VARCHAR(255) NOT NULL,
   username VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
-  admin BOOLEAN DEFAULT FALSE;
+  admin BOOLEAN DEFAULT FALSE);
   
 CREATE TABLE IF NOT EXISTS messages (
   id SERIAL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   title VARCHAR(500) NOT NULL,
   text TEXT NOT NULL,
   date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP, 
-  userid INTEGER REFERENCES users(id) ON DELETE CASCADE;
+  userid INTEGER REFERENCES users(id) ON DELETE CASCADE);
   `;
 
 async function main() {
